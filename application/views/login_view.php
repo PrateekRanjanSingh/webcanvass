@@ -6,7 +6,7 @@
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script> 
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>data/files/materialize.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	
+
 <style type="text/css">
 
 html { 
@@ -60,10 +60,6 @@ html {
 						?>
 						<input type="password" name="pass" placeholder="PASSWORD">
 						<input type="password" name="passcon" placeholder="CONFIRM PASSWORD">
-						<div class="file-field input-field">
-						  <div class="btn waves-effect waves-light blue darken-3"><span>Photo</span><input type="file" name="image"></div>
-						  <div class="file-path-wrapper"><input class="file-path validate" type="text"></div>
-						</div>
 					</div>
 	            	<div class="card-action">
 	              		<button class="btn waves-effect waves-light blue darken-3" type="submit" name="action">Submit</button>
