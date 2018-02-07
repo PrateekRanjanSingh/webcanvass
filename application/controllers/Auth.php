@@ -45,7 +45,7 @@ class auth extends ci_controller {
 		$this->form_validation->set_rules('passcon', 'Password Confirm', 'required|matches[pass]');
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
 		$this->form_validation->set_error_delimiters('', '<br>');
-		
+		$_POST['image']=$this->image();
 		if($this->form_validation->run() == FALSE) 
 			{
 				$error['msg']=validation_errors();
@@ -54,11 +54,6 @@ class auth extends ci_controller {
 		else if($this->auth_model->check()==TRUE)
 			{
 				$error['msg']= "Username Exists";
-				$this->load->view('login_view', $error);
-			}
-		else if($this->do_upload()==FALSE)
-			{
-				$error['msg']= $this->upload->display_errors();
 				$this->load->view('login_view', $error);
 			}
 		else if(!$this->auth_model->ins())
@@ -77,37 +72,26 @@ class auth extends ci_controller {
 
 
 
-	function do_upload()
-        {	if(isset($is_logged_in) && $is_logged_in == TRUE) redirect('/'); 
-        		$name=$_POST['usid'].'_'.time().'.jpg';
-                $config['upload_path']          = 'data/uploads/';
-                $config['allowed_types']        = 'gif|jpg|png';
-                $config['file_name']			= $name;
-                $_POST['image']=$name;
+	function image()
+        {	$dir = base_url()."data/uploads/";
+			$a=array();
 
-                $this->upload->initialize($config);
+			if (is_dir($dir)){
+			  if ($dh = opendir($dir)){
+			    while (($file = readdir($dh)) !== false){
+			      if(preg_match("/.png$/",$file))
+			      	$a[]= $file;
+			    }
+			    closedir($dh);
+			    $random_key=array_rand($a);
+				$b=$a[$random_key];
+				return $b;  
+			  }
+			}
 
-                if ( ! $this->upload->do_upload('image')) return FALSE;
-                else return TRUE;
         }
 
 
-    function crop()
-        {
-        	$config['image_library'] = 'gd2';
-			$config['source_image'] = "C:\MAMP\htdocs\OSP\data\upload\shubhxz_1517589656.jpg";
-			$config['new_image'] = 'C:\MAMP\htdocs\OSP\data\upload\15317589656.jpg';
-			//$config['create_thumb'] = TRUE;
-			//$config['maintain_ratio'] = FALSE;
-			$config['x_axis']       = 5;
-			$config['y_axis']       = 5;
-
-			$this->load->library('image_lib', $config);
-
-			$this->image_lib->resize();
-			$this->image_lib->crop();
-			echo $this->image_lib->display_errors();
-		}
 	function logout()
 	{
 		$this->session->sess_destroy();
