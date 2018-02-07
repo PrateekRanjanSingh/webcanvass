@@ -10,12 +10,14 @@
 <style type="text/css">
 
 html { 
-  background: url(<?php echo base_url()."data/files/back.jpg"?>) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+  
+  	background: url(<?php echo base_url()."data/files/back.jpg"?>) no-repeat center center fixed; 
+ 	height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+ }
 
 </style>
 </head>
