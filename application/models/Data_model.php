@@ -9,13 +9,13 @@ class data_model extends ci_model
 	{
 
 		if($usid==NULL)
-		{	$this->db->order_by('ID',"desc");
+		{	$this->db->order_by('id',"desc");
 			$query = $this->db->get('topic');
 		}
 		else
 		{
 			$this->db->where('usid', $usid);
-			$this->db->order_by('ID',"desc");
+			$this->db->order_by('id',"desc");
 			$query = $this->db->get('topic');
 		}
 		$data=array();
@@ -31,7 +31,7 @@ class data_model extends ci_model
 	{
 		if($topic==NULL)
 		{
-			//$this->db->order_by('ID',"desc");
+			//$this->db->order_by('id',"desc");
 			$query = $this->db->get('reply');
 			
 			
@@ -41,7 +41,7 @@ class data_model extends ci_model
 
 			
 			$this->db->where('topic',$topic);
-			//$this->db->order_by('ID',"desc");
+			//$this->db->order_by('id',"desc");
 			$query=$this->db->get('reply');
 
 		}
