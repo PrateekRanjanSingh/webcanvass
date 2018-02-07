@@ -5,9 +5,9 @@
 	<script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script> 
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>data/files/materialize.css">
-<style type="text/css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	
+<style type="text/css">
 
 html { 
   background: url(<?php echo base_url()."data/files/back.jpg"?>) no-repeat center center fixed; 
