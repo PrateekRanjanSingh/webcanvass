@@ -73,7 +73,7 @@ class auth extends ci_controller {
 
 
 	function image()
-        {	$dir = base_url()."data/uploads/";
+        {	$dir = "data/uploads/";
 			$a=array();
 
 			if (is_dir($dir)){
