@@ -80,15 +80,14 @@ html {
 	            </form>
           </div>
           <?php if(isset($msg)&&!empty($msg)) echo
-          "<div class='card purple-text deep-purple darken-1 hoverable'>
-            <div class='card-content white-text'><center>
+          "<div class='card purple-text white darken-1 hoverable'>
+            <div class='card-content purple-text'><center>
 				<p class='content'> $msg </p>
 				</div>
         </div>";?>
       </div>
 
 
-<button class="btn waves-effect waves-light blue darken-3" type="reset" name="action" onclick="validate()">Reset</button>
 
 
 
