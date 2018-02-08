@@ -28,8 +28,10 @@
     <div id="slide-out" class="side-nav fixed card col l3 blue-grey lighten-5" style="padding: 0px;">
       <div id="slide-ou"></div>
       <div class="card indigo darken-1">
-        <div class="card-image card-content">
+        <div class="card-content">
+          <div class="card card-image hoverable z-depth-4">
           <img src="<?php echo base_url()."data/uploads/".$this->session->userdata('image') ?>" id="pc">
+        </div>
         </div>
       </div>
       
