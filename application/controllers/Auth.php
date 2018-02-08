@@ -44,7 +44,7 @@ class auth extends ci_controller {
 		else
 			{
 				$as['msg']='Successfully Registered';
-				//$this->load->view('login_view',$as);
+				$this->load->view('login_view',$as);
 			}
 		
 	}
