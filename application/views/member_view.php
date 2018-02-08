@@ -30,8 +30,10 @@
           
     <div id="slide-out" class="side-nav fixed card col l3 blue-grey lighten-5" style="padding: 0px;">
       <div class="card indigo darken-1">
-        <div class="card-image card-content">
+        <div class="card-content">
+          <div class="card card-image hoverable z-depth-4">
           <img src="<?php echo base_url()."data/uploads/".$info['image'] ?>" id="pc" align="center">
+        </div>
         </div>
       </div>
       
@@ -80,17 +82,24 @@
           
             
                  <nav>
-    <div class="nav-wrapper white-text  deep-purple darken-4">
-      
-      <ul class="left">
-        <li><a href="<?php echo base_url()?>"><i class="material-icons left">home</i><spam class="hide-on-small-only">home</spam></a></li>
-        <li><a href="<?php echo base_url()."index.php/ext/add"?>"><i class="material-icons left">add_circle</i><spam class="hide-on-small-only">Add a topic</spam></a></li>
-        <li><a href="<?php echo base_url();?>index.php/auth/logout"><i class="material-icons left">all_out</i>Logout<span class="hide-on-small-only grey-text">  @<?php echo $this->session->userdata('usid')?></spam></a></li>
-        <li><a href="<?php echo base_url()."index.php/ext/about"?>"><i class="material-icons left">child_care</i><spam class="hide-on-small-only">About</spam></a></li>
-      </ul>
-      
-    </div>
-  </nav>
+            <div class="nav-wrapper white-text  deep-purple darken-4">
+              <ul class="left hide-on-small-only">
+                <li><a href="<?php echo base_url()?>"><i class="material-icons left">home</i><span >Home</span></a></li>
+                <li><a href="<?php echo base_url()."index.php/members"?>"><i class="material-icons left">group</i><span>Members</span></a></li>
+                <li><a href="<?php echo base_url()."index.php/ext/add"?>"><i class="material-icons left">add_circle</i><span >Add a topic</span></a></li>
+                <li><a href="<?php echo base_url();?>index.php/auth/logout"><i class="material-icons left">all_out</i>Logout<span class="hide-on-small-only grey-text">  @<?php echo $this->session->userdata('usid')?></span></a></li>
+                <li><a href="<?php echo base_url()."index.php/ext/about"?>"><i class="material-icons left">help</i><span >About</span></a></li>
+              </ul>
+
+              <ul class="left hide-on-med-and-up">
+                <li><a href="<?php echo base_url()?>"><i class="material-icons">home</i></a></li>
+                <li><a href="<?php echo base_url()."index.php/ext/about"?>"><i class="material-icons">group</i></a></li>
+                <li><a href="<?php echo base_url()."index.php/ext/add"?>"><i class="material-icons">add_circle</i></a></li>
+                <li><a href="<?php echo base_url();?>index.php/auth/logout"><i class="material-icons left">all_out</i><span>Logout</span></a></li>
+                <li><a href="<?php echo base_url()."index.php/ext/about"?>"><i class="material-icons">help</i></a></li>
+              </ul>
+            </div>
+          </nav>
 
 
           

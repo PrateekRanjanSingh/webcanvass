@@ -9,7 +9,7 @@ class data_model extends ci_model
 	{
 
 		if($usid==NULL)
-		{	$this->db->order_by('id',"desc");
+		{	$this->db->order_by('id',"desc"); 
 			$query = $this->db->get('topic');
 		}
 		else
@@ -59,7 +59,7 @@ class data_model extends ci_model
 	{	
 		$c=array();
 		foreach ($data as $a) {
-			$this->db->select('fname, lname,email,image,doj');
+			$this->db->select('fname, lname,email,image,doj,gender');
 			$this->db->where('usid',$a['usid']);
 			$q = $this->db->get('members');
 			$q=$q->result();
@@ -71,7 +71,8 @@ class data_model extends ci_model
 
 	function mem_list()
 	{
-		$this->db->select('lname, fname,usid' );
+		$this->db->select('lname, fname,usid,image' );
+		$this->db->order_by('fname');
 		$data=$this->db->get('members')->result();
 		$a=array();
 		foreach ($data as $key) $a[]=(array)$key;

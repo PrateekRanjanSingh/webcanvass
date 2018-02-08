@@ -38,10 +38,10 @@ html {
 			    </div>
 			</nav>
 				<div id="login" class="show">
-				<form action="<?php echo base_url()?>index.php/auth" method="post">
+				<form action="<?php echo base_url()?>index.php/auth" method="post" onsubmit="return validate2()">
 	            	<div class="card-content white-text">
-	            		<?php echo form_input('usid', set_value('usid'), 'placeholder="USERNAME"');?>
-						<input type="password" name="pass" placeholder="PASSWORD">
+	            		<?php echo form_input('usid', set_value('usid'), 'placeholder="USERNAME" id="usid2"');?>
+						<input type="password" name="pass" placeholder="PASSWORD" id="pass2">
 	
 					</div>
 	            	<div class="card-action">
@@ -52,16 +52,21 @@ html {
 	        	</div>
 
 	        	<div id="reg" class="hide">
-				<form action="<?php echo base_url()?>index.php/auth/new" method="post" enctype="multipart/form-data">
+				<form action="<?php echo base_url()?>index.php/auth/new" method="post" onsubmit="return validate()">
 	            	<div class="card-content white-text">
 	            		<?php 
-	            		echo form_input('fname', set_value('fname'), 'placeholder="FIRST NAME"');
-	            		echo form_input('lname', set_value('lname'), 'placeholder="LAST NAME"'); 
-						echo form_input('email', set_value('email'), 'placeholder="EMAIL"'); 
-						echo form_input('usid', set_value('usid'), 'placeholder="USERNAME"');
+	            		echo form_input('fname', set_value('fname'), 'placeholder="FIRST NAME" id="fname"');
+	            		echo form_input('lname', set_value('lname'), 'placeholder="LAST NAME" id="lname"'); 
+						echo form_input('email', set_value('email'), 'placeholder="EMAIL" id="email"'); 
+						echo form_input('usid', set_value('usid'), 'placeholder="USERNAME" id="usid"');
 						?>
-						<input type="password" name="pass" placeholder="PASSWORD">
-						<input type="password" name="passcon" placeholder="CONFIRM PASSWORD">
+						<p class="white-text center-align">
+					      <input name="gender" value="male" type="radio" id="test1" checked="checked"/><label for="test1" class="white-text">Male</label>
+					      <input name="gender" value='female' type="radio" id="test2" /><label for="test2" class="white-text">Femlale</label>
+					    </p>
+    
+						<input type="password" name="pass" placeholder="PASSWORD" id="pass">
+						<input type="password" name="passcon" placeholder="CONFIRM PASSWORD" id="passcon">
 					</div>
 	            	<div class="card-action">
 	              		<button class="btn waves-effect waves-light blue darken-3" type="submit" name="action">Submit</button>
@@ -83,6 +88,7 @@ html {
       </div>
 
 
+<button class="btn waves-effect waves-light blue darken-3" type="reset" name="action" onclick="validate()">Reset</button>
 
 
 
@@ -100,6 +106,45 @@ function shreg() {
 	document.getElementById("logl").className = "";
 	document.getElementById("regl").className = "active";
 }
+function validate() {
+
+            var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,6})$/;
+            
+            
+            fname = document.getElementById('fname').value;
+            lname = document.getElementById('lname').value;
+            email = document.getElementById('email').value;
+            usid = document.getElementById('usid').value;
+            pass = document.getElementById('pass').value;
+            passcon = document.getElementById('passcon').value;
+            var a="";
+
+            if(fname.length==0) a=a+"The First Name is required.\n";
+            if(lname.length==0) a=a+'The First Name is required.\n';
+            if(email.length==0) a=a+'The Email is required.\n';
+            else if (reg.test(email) == false) a=a+ 'Invalid Email Address\n';
+            if(usid.length<4) a=a+'The Username must be at least 4 characters in length.\n';
+            if(pass.length<4) a=a+'Password must be at least 4 characters in length..\n';
+            else if(pass!=passcon) a=a+'Passwords do not match.\n';
+
+            if(a==''){return true;}     
+            else {alert(a); return false;}     
+                
+ }
+
+ function validate2() {
+
+            usid = document.getElementById('usid2').value;
+            pass = document.getElementById('pass2').value;
+            var a="";
+
+            if(usid.length<4) a=a+'The Username must be at least 4 characters in length.\n';
+            if(pass.length<4) a=a+'Password must be at least 4 characters in length.\n';
+            
+            if(a==''){return true;}     
+            else {alert(a); return false;}     
+                
+ }
 	
 </script>
 

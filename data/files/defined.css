@@ -46,3 +46,7 @@ i.fa{
   font-size:36px;
   padding:10px;
 }
+
+.card{
+  overflow: hidden;
+}
