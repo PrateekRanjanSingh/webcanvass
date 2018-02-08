@@ -119,7 +119,7 @@ function validate() {
             var a="";
 
             if(fname.length==0) a=a+"The First Name is required.\n";
-            if(lname.length==0) a=a+'The First Name is required.\n';
+            if(lname.length==0) a=a+'The Last Name is required.\n';
             if(email.length==0) a=a+'The Email is required.\n';
             else if (reg.test(email) == false) a=a+ 'Invalid Email Address\n';
             if(usid.length<4) a=a+'The Username must be at least 4 characters in length.\n';
