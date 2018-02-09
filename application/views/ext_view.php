@@ -57,7 +57,7 @@
 
               <ul class="left hide-on-med-and-up">
                 <li><a href="<?php echo base_url()?>"><i class="material-icons">home</i></a></li>
-                <li><a href="<?php echo base_url()."index.php/ext/about"?>"><i class="material-icons">group</i></a></li>
+                <li><a href="<?php echo base_url()."index.php/members"?>"><i class="material-icons">group</i></a></li>
                 <li><a href="<?php echo base_url()."index.php/ext/add"?>"><i class="material-icons">add_circle</i></a></li>
                 <li><a href="<?php echo base_url();?>index.php/auth/logout"><i class="material-icons left">all_out</i><span>Logout</span></a></li>
                 <li><a href="<?php echo base_url()."index.php/ext/about"?>"><i class="material-icons">help</i></a></li>
