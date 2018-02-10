@@ -25,8 +25,11 @@ html {
 
 <div class="row">
 		<div class="col hide-on-med-and-down l4"></div>
-        <div class="col m12 l4">
-            <center><h1 style="text-shadow: 2px 2px #000000; margin-top:50px; padding:10px" class="z-depth-5 white-text">Welcome!</h1></center>
+        <div class="col m12 l4 s12">
+        	<div class="card z-depth-5 white-text" style="background-color: transparent;">
+        		<div class="col l4 s4 m5"></div><div class="col l4 s4 m2 card-image"><img src="<?php echo base_url()."data/files/logo.png"?>"></div><div class="col l4 s4 m5"></div><div class="col l s12 m12">dfd</div>
+            	<center><h1 style="text-shadow: 2px 2px #000000; margin-top:50px; padding:10px" class="">Welcome!</h1></center>
+        	</div>
           <div class="card  deep-purple darken-1 hoverable ">
             <nav>
 			    <div class="nav-wrapper blue darken-3">
