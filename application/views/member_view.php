@@ -65,9 +65,11 @@
         
     
       
-      <div class="card-panel deep-purple darken-4" style="margin: 0px;">
+      <div class="card-panel deep-purple darken-4 row" style="margin: 0px;">
           <div class="col l1 hide-on-med-and-down" style="display: inline-block;"><a href="#" class="white-text " id="hd"><i class="material-icons">view_list</i></a></div>
-<h5 class="white-text center-align">~~Webapp~~</h5>
+          <div class="col l3 m3 s2"></div>
+          <div class="col l2 m2 s3 card-image"><img src="<?php echo base_url()."data/files/logo.png"?>"></div>
+          <div class="col l3 m3 s3"><h5 class="white-text center-align"><b> WebCanvass</b></h5></div>
         </div>
     
           

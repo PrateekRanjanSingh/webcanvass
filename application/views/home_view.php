@@ -68,8 +68,8 @@
 
               <div class="col l1 hide-on-med-and-down" style="display: inline-block;"><a href="#" class="white-text " id="hd"><i class="material-icons">view_list</i></a></div>
 
-              <div class="col l1 s2 m2 card-image"><img src="https://i.pinimg.com/originals/63/a4/d6/63a4d68b1aa22ccbde3e043c992ae3f2.png"></div>
-              <div class="col l11 s9 m9"><h4 class="flow-text">Welcome To **Webapp**</h4></div>            
+              <div class="col l2 s3 m4 card-image"><img src="<?php echo base_url()."data/files/logo.png"?>"></div>
+              <div class="col l11 s9 m9"><h4 class="flow-text">Welcome To WebCanvass</h4></div>            
             </div>
           </div>
           
