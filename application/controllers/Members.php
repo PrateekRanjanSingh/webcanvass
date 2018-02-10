@@ -16,8 +16,10 @@ class members extends ci_controller {
 	}
 */
 	function index()
-	{$this->load->model('data_model');
-
+	{
+		if(!($this->session->userdata('is_logged_in') == TRUE)) redirect('/');
+		
+		$this->load->model('data_model');
 		if(!isset($_GET['mem']))
 		{
 			$info=$this->data_model->mem_list();
