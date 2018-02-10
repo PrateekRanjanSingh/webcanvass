@@ -23,6 +23,8 @@ class auth_model extends ci_model {
 	function ins()
 	{
 		$_POST['usid']=strtolower($_POST['usid']);
+		$_POST['lname']=ucfirst($_POST['fname']);
+		$_POST['fname']=ucfirst($_POST['fname']);
 		$data=$_POST;
 		str_replace(".","_",$data['usid']);
 		unset($data['passcon']);
