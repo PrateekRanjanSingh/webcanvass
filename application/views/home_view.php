@@ -25,7 +25,7 @@
         
 <div class="row">
           
-    <div id="slide-out" class="side-nav fixed card col l3 blue-grey lighten-5" style="padding: 0px;">
+    <div id="slide-out" class="side-nav fixed card col l3 blue-grey lighten-5" style="padding: 0px; overflow: auto;">
       <div id="slide-ou"></div>
       <div class="card indigo darken-1">
         <div class="card-content">
