@@ -4,6 +4,7 @@ class auth_model extends ci_model {
 
 	function validiate()
 	{	//echo $_POST['usid'].$_POST['pass'];
+		$_POST['usid']=strtolower($_POST['usid']);
 		$this->db->where('usid', $_POST['usid']);
 		$this->db->where('pass', $_POST['pass']);
 		$query = $this->db->get('members');
@@ -12,6 +13,7 @@ class auth_model extends ci_model {
 
 	function check()
 	{
+		$_POST['usid']=strtolower($_POST['usid']);
 		$this->db->where('usid',$_POST['usid']);
 		$query=$this->db->get('members');
 		if($query->result()== array()) return FALSE;
@@ -20,7 +22,7 @@ class auth_model extends ci_model {
 
 	function ins()
 	{
-
+		$_POST['usid']=strtolower($_POST['usid']);
 		$data=$_POST;
 		str_replace(".","_",$data['usid']);
 		unset($data['passcon']);

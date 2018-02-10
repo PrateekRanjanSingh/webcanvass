@@ -4,6 +4,7 @@ class add extends ci_controller {
 	
 	function index()
 	{
+		if($this->session->userdata('is_logged_in') != TRUE) redirect('/');
 		$this->load->model('data_model');
 		$this->load->view('add_view');
 		
